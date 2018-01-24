@@ -16,6 +16,16 @@ class Controller{
         Controller();
         sf::RenderWindow& returnWindow();
     private:
+    
+        void start();
+    
+        //Process Events
+        void processWindow();
+        //Update
+        void updateWindow();
+        //Draw
+        void drawWindow();
+    
         sf::RenderWindow window;
 };
 
