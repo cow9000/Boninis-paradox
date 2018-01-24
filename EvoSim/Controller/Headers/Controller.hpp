@@ -22,7 +22,7 @@ class Controller{
         //Process Events
         void processWindow();
         //Update
-        void updateWindow();
+        void updateWindow(sf::Time timePerFrame);
         //Draw
         void drawWindow();
     

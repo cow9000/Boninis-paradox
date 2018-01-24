@@ -16,9 +16,24 @@ Controller::Controller(){
 }
 
 void Controller::start(){
+    
+    sf::Clock fpsClock;
+    const sf::Time timePerFrame = sf::seconds(1.f/60.f);
+    sf::Time elapsedTime = sf::Time::Zero;
+    
     while(window.isOpen()){
         processWindow();
-        updateWindow();
+        
+        
+        sf::Time timeSinceLastUpdate = fpsClock.restart();
+        timeSinceLastUpdate += elapsedTime;
+        
+        while(timeSinceLastUpdate > timePerFrame){
+            //Limit FPS here to 60 FPS
+            timeSinceLastUpdate -= timePerFrame;
+            updateWindow(timePerFrame);
+            
+        }
         drawWindow();
     }
 }
@@ -41,8 +56,9 @@ void Controller::processWindow(){
     }
 }
 
-void Controller::updateWindow(){
+void Controller::updateWindow(sf::Time timePerFrame){
     //Put updating for game states in here
+    
 }
 
 void Controller::drawWindow(){
