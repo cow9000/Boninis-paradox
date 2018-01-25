@@ -8,9 +8,18 @@
 
 class StateManager{
 public:
-
+    StateManager();
+    
+    State& returnMainMenuState();
+    State& returnOptionsMenuState();
+    State& returnPlayState();
+    State& returnPauseState();
+    
 private:
-	std::stack<State> states;
+    State mainMenuSate;
+    State optionsMenuState;
+    State playState;
+    State pauseState;
 };
 
 
