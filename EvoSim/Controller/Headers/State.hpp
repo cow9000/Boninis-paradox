@@ -7,10 +7,9 @@
 
 class State{
 public:
-    State();
-    virtual void processState(sf::Event &event);
-    virtual void updateState();
-    virtual void renderState(sf::RenderTarget &renderWindow);
+    void processState(sf::Event &event) {};
+    void updateState() {};
+    void renderState(sf::RenderTarget &renderWindow) {};
 };
 
 #endif //State_hpp 

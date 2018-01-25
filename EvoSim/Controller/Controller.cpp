@@ -51,19 +51,19 @@ void Controller::processWindow(){
                 break;
         }
         
-        
+        stateManager.returnCurrentState().processState(event);
         
     }
 }
 
 void Controller::updateWindow(sf::Time timePerFrame){
     //Put updating for game states in here
-    
+    stateManager.returnCurrentState().updateState();
 }
 
 void Controller::drawWindow(){
     window.clear();
-    
+    stateManager.returnCurrentState().renderState(window);
     //Put window drawing here
     
     window.display();

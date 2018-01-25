@@ -10,6 +10,7 @@
 #define Controller_hpp
 
 #include <SFML/Graphics.hpp>
+#include "StateManager.hpp"
 
 class Controller{
     public:
@@ -27,6 +28,7 @@ class Controller{
         void drawWindow();
     
         sf::RenderWindow window;
+        StateManager stateManager;
 };
 
 #endif /* Controller_hpp */

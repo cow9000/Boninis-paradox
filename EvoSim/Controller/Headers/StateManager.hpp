@@ -15,11 +15,15 @@ public:
     State& returnPlayState();
     State& returnPauseState();
     
+    State& returnCurrentState();
+    
 private:
-    State mainMenuSate;
-    State optionsMenuState;
-    State playState;
-    State pauseState;
+    State* mainMenuState;
+    State* optionsMenuState;
+    State* playState;
+    State* pauseState;
+    
+    State* currentState;
 };
 
 
