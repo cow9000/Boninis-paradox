@@ -3,11 +3,14 @@
 #ifndef State_hpp
 #define State_hpp
 
+#include <SFML/Graphics.hpp>
+
 class State{
 public:
-	
-private:
-	
+    State();
+    virtual void processState(sf::Event &event);
+    virtual void updateState();
+    virtual void renderState(sf::RenderTarget &renderWindow);
 };
 
-#endif //State_hpp
+#endif //State_hpp 

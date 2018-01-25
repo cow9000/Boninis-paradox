@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71062CF8201A5B0E002A0217 /* StateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71062CF7201A5B0E002A0217 /* StateManager.cpp */; };
 		714D2A762019169600990316 /* libsfml-audio.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 714D2A712019169600990316 /* libsfml-audio.2.4.2.dylib */; };
 		714D2A772019169600990316 /* libsfml-window.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 714D2A722019169600990316 /* libsfml-window.2.4.2.dylib */; };
 		714D2A782019169600990316 /* libsfml-system.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 714D2A732019169600990316 /* libsfml-system.2.4.2.dylib */; };
@@ -29,6 +30,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		71062CF5201A5B09002A0217 /* State.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = State.hpp; sourceTree = "<group>"; };
+		71062CF6201A5B09002A0217 /* StateManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = StateManager.hpp; sourceTree = "<group>"; };
+		71062CF7201A5B0E002A0217 /* StateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StateManager.cpp; sourceTree = "<group>"; };
 		714D2A662019160300990316 /* EvoSim */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EvoSim; sourceTree = BUILT_PRODUCTS_DIR; };
 		714D2A712019169600990316 /* libsfml-audio.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-audio.2.4.2.dylib"; path = "ExternalLibraries/SFML/lib/libsfml-audio.2.4.2.dylib"; sourceTree = "<group>"; };
 		714D2A722019169600990316 /* libsfml-window.2.4.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libsfml-window.2.4.2.dylib"; path = "ExternalLibraries/SFML/lib/libsfml-window.2.4.2.dylib"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				714D2A7E20191B0C00990316 /* Headers */,
 				714D2A7C20191B0500990316 /* Runner.cpp */,
 				714D2A8020191B1C00990316 /* Controller.cpp */,
+				71062CF7201A5B0E002A0217 /* StateManager.cpp */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,6 +112,8 @@
 		714D2A7E20191B0C00990316 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				71062CF5201A5B09002A0217 /* State.hpp */,
+				71062CF6201A5B09002A0217 /* StateManager.hpp */,
 				714D2A8120191B1C00990316 /* Controller.hpp */,
 			);
 			path = Headers;
@@ -176,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71062CF8201A5B0E002A0217 /* StateManager.cpp in Sources */,
 				714D2A7D20191B0500990316 /* Runner.cpp in Sources */,
 				714D2A8220191B1C00990316 /* Controller.cpp in Sources */,
 			);
