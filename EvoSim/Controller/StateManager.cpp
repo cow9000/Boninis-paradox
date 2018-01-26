@@ -1,14 +1,23 @@
 #include "Headers/StateManager.hpp"
 #include "Headers/MainMenuState.hpp"
+#include "Headers/OptionsMenuState.hpp"
+#include "Headers/PlayState.hpp"
+#include "Headers/PauseState.hpp"
 
 StateManager::StateManager(){
     this->mainMenuState = new MainMenuState();
+    this->optionsMenuState = new OptionsMenuState();
+    this->playState = new PlayState();
+    this->pauseState = new PauseState();
     
     this->currentState = mainMenuState;
 }
 
 StateManager::~StateManager(){
     delete mainMenuState;
+    delete optionsMenuState;
+    delete playState;
+    delete pauseState;
 }
 
 

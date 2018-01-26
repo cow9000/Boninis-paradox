@@ -114,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				714D2A7E20191B0C00990316 /* Headers */,
+				71A6D457201BAAD9005E3AA1 /* Gameplay */,
 				714D2A7C20191B0500990316 /* Runner.cpp */,
 				714D2A8020191B1C00990316 /* Controller.cpp */,
 				71062CF7201A5B0E002A0217 /* StateManager.cpp */,
@@ -128,6 +129,7 @@
 		714D2A7E20191B0C00990316 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				71A6D456201BAAC9005E3AA1 /* Gameplay */,
 				71062CF5201A5B09002A0217 /* State.hpp */,
 				71062CF6201A5B09002A0217 /* StateManager.hpp */,
 				714D2A8120191B1C00990316 /* Controller.hpp */,
@@ -144,6 +146,20 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		71A6D456201BAAC9005E3AA1 /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gameplay;
+			sourceTree = "<group>";
+		};
+		71A6D457201BAAD9005E3AA1 /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gameplay;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
