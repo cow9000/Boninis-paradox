@@ -49,6 +49,7 @@
 		714D2A8120191B1C00990316 /* Controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
 		718A2B50201BBBA7002C2EB3 /* Tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
 		718A2B51201BBBA7002C2EB3 /* Tile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
+		718A2B53201BBE40002C2EB3 /* TileManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TileManager.hpp; sourceTree = "<group>"; };
 		71A6D44A201BA6C2005E3AA1 /* MainMenuState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuState.cpp; sourceTree = "<group>"; };
 		71A6D44B201BA6C2005E3AA1 /* MainMenuState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainMenuState.hpp; sourceTree = "<group>"; };
 		71A6D44D201BA8D9005E3AA1 /* OptionsMenuState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OptionsMenuState.cpp; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				718A2B51201BBBA7002C2EB3 /* Tile.hpp */,
+				718A2B53201BBE40002C2EB3 /* TileManager.hpp */,
 			);
 			path = Gameplay;
 			sourceTree = "<group>";
