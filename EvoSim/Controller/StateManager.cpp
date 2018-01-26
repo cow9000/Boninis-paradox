@@ -43,3 +43,15 @@ State& StateManager::returnPauseState(){
 State& StateManager::returnCurrentState(){
     return *currentState;
 }
+
+void StateManager::setCurrentState(AllowedStates::States changeToState){
+    if(changeToState == AllowedStates::States::MAINMENU){
+        currentState = mainMenuState;
+    }else if(changeToState == AllowedStates::States::OPTIONS){
+        currentState = optionsMenuState;
+    }else if(changeToState == AllowedStates::States::PLAY){
+        currentState = playState;
+    }else if(changeToState == AllowedStates::States::PAUSE){
+        currentState = pauseState;
+    }
+}

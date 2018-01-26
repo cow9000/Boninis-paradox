@@ -6,6 +6,10 @@
 #include "State.hpp"
 #include <stack>
 
+struct AllowedStates{
+    enum States {MAINMENU,OPTIONS,PLAY,PAUSE};
+};
+
 class StateManager{
 public:
     StateManager();
@@ -17,6 +21,8 @@ public:
     State& returnPauseState();
     
     State& returnCurrentState();
+    
+    void setCurrentState(AllowedStates::States changeToState);
     
 private:
     State* mainMenuState;

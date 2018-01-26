@@ -61,8 +61,9 @@ void Controller::updateWindow(sf::Time timePerFrame){
 
 void Controller::drawWindow(){
     window.clear();
+    
+    //Draw the current state
     stateManager.returnCurrentState().renderState(window);
-    //Put window drawing here
     
     window.display();
 }
