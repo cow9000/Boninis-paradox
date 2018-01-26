@@ -11,7 +11,7 @@
 
 namespace TileManager{
     //Tiles that are able to be created
-    enum TileList{GRASS, WATER};
+    enum TileList{GRASS, TREE, ROCK, WATER};
     
 };
 

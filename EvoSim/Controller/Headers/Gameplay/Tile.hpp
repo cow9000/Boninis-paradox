@@ -13,9 +13,6 @@
 
 class Tile{
 public:
-    
-    virtual void init() = 0;
-    
     sf::Color returnMaxColorValues() { return maxColorValues; }
     sf::Color returnMinColorValues() { return minColorValues; }
     sf::Color returnCurrentColorValues() { return currentColorValues;}
@@ -27,9 +24,19 @@ public:
     bool returnCanLive(){ return canLive; }
     bool returnLiving(){ return living; }
     bool returnNeedsPartner() { return needsPartner;  }
+    bool returnFlammable() { return flammable;}
     
     
 private:
+    
+    //Methods needed for tile creation
+    virtual void init() = 0;
+    virtual void assignColors() = 0;
+    virtual void assignPosition() = 0;
+    virtual void assignSize() = 0;
+    virtual void assignTileProperties() = 0;
+    
+    
     //Colors will represent how "alive the ground is, if indeed that tile is alive"
     sf::Color maxColorValues;
     sf::Color minColorValues;
@@ -44,6 +51,7 @@ private:
     bool living;
     //Does it need a partner for reproduction
     bool needsPartner;
+    bool flammable;
     
     //Living rates and data needed
     double growthRate;
