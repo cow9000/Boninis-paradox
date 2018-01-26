@@ -9,6 +9,7 @@
 class StateManager{
 public:
     StateManager();
+    ~StateManager();
     
     State& returnMainMenuState();
     State& returnOptionsMenuState();

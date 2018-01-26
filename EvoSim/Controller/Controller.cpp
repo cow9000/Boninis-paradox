@@ -45,13 +45,11 @@ void Controller::processWindow(){
     while(window.pollEvent(event)){
         
         //Default for all game states, if the window is closed, close the window
-        switch(event.type){
-            case sf::Event::Closed:
+        if(event.type == sf::Event::Closed){
                 window.close();
-                break;
+        }else{
+            stateManager.returnCurrentState().processState(event);
         }
-        
-        stateManager.returnCurrentState().processState(event);
         
     }
 }

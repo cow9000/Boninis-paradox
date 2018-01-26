@@ -1,7 +1,14 @@
 #include "Headers/StateManager.hpp"
+#include "Headers/MainMenuState.hpp"
 
 StateManager::StateManager(){
+    this->mainMenuState = new MainMenuState();
+    
     this->currentState = mainMenuState;
+}
+
+StateManager::~StateManager(){
+    delete mainMenuState;
 }
 
 

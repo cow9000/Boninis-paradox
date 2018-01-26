@@ -15,6 +15,10 @@
 		714D2A7A2019169600990316 /* libsfml-graphics.2.4.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 714D2A752019169600990316 /* libsfml-graphics.2.4.2.dylib */; };
 		714D2A7D20191B0500990316 /* Runner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 714D2A7C20191B0500990316 /* Runner.cpp */; };
 		714D2A8220191B1C00990316 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 714D2A8020191B1C00990316 /* Controller.cpp */; };
+		71A6D44C201BA6C2005E3AA1 /* MainMenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A6D44A201BA6C2005E3AA1 /* MainMenuState.cpp */; };
+		71A6D44F201BA8D9005E3AA1 /* OptionsMenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A6D44D201BA8D9005E3AA1 /* OptionsMenuState.cpp */; };
+		71A6D452201BA924005E3AA1 /* PlayState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A6D450201BA924005E3AA1 /* PlayState.cpp */; };
+		71A6D455201BA954005E3AA1 /* PauseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A6D453201BA954005E3AA1 /* PauseState.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +46,14 @@
 		714D2A7C20191B0500990316 /* Runner.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Runner.cpp; sourceTree = "<group>"; };
 		714D2A8020191B1C00990316 /* Controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
 		714D2A8120191B1C00990316 /* Controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
+		71A6D44A201BA6C2005E3AA1 /* MainMenuState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuState.cpp; sourceTree = "<group>"; };
+		71A6D44B201BA6C2005E3AA1 /* MainMenuState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainMenuState.hpp; sourceTree = "<group>"; };
+		71A6D44D201BA8D9005E3AA1 /* OptionsMenuState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OptionsMenuState.cpp; sourceTree = "<group>"; };
+		71A6D44E201BA8D9005E3AA1 /* OptionsMenuState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OptionsMenuState.hpp; sourceTree = "<group>"; };
+		71A6D450201BA924005E3AA1 /* PlayState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayState.cpp; sourceTree = "<group>"; };
+		71A6D451201BA924005E3AA1 /* PlayState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayState.hpp; sourceTree = "<group>"; };
+		71A6D453201BA954005E3AA1 /* PauseState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PauseState.cpp; sourceTree = "<group>"; };
+		71A6D454201BA954005E3AA1 /* PauseState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PauseState.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,10 @@
 				714D2A7C20191B0500990316 /* Runner.cpp */,
 				714D2A8020191B1C00990316 /* Controller.cpp */,
 				71062CF7201A5B0E002A0217 /* StateManager.cpp */,
+				71A6D44A201BA6C2005E3AA1 /* MainMenuState.cpp */,
+				71A6D44D201BA8D9005E3AA1 /* OptionsMenuState.cpp */,
+				71A6D450201BA924005E3AA1 /* PlayState.cpp */,
+				71A6D453201BA954005E3AA1 /* PauseState.cpp */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -115,6 +131,10 @@
 				71062CF5201A5B09002A0217 /* State.hpp */,
 				71062CF6201A5B09002A0217 /* StateManager.hpp */,
 				714D2A8120191B1C00990316 /* Controller.hpp */,
+				71A6D44B201BA6C2005E3AA1 /* MainMenuState.hpp */,
+				71A6D44E201BA8D9005E3AA1 /* OptionsMenuState.hpp */,
+				71A6D451201BA924005E3AA1 /* PlayState.hpp */,
+				71A6D454201BA954005E3AA1 /* PauseState.hpp */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -184,7 +204,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				71062CF8201A5B0E002A0217 /* StateManager.cpp in Sources */,
+				71A6D452201BA924005E3AA1 /* PlayState.cpp in Sources */,
+				71A6D44F201BA8D9005E3AA1 /* OptionsMenuState.cpp in Sources */,
+				71A6D44C201BA6C2005E3AA1 /* MainMenuState.cpp in Sources */,
 				714D2A7D20191B0500990316 /* Runner.cpp in Sources */,
+				71A6D455201BA954005E3AA1 /* PauseState.cpp in Sources */,
 				714D2A8220191B1C00990316 /* Controller.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
