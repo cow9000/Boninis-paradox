@@ -24,7 +24,11 @@ public:
     bool returnCanLive(){ return canLive; }
     bool returnLiving(){ return living; }
     bool returnNeedsPartner() { return needsPartner;  }
-    bool returnFlammable() { return flammable;}
+    bool returnFlammable() { return flammable; }
+    
+    double returnGrowthRare(){ return growthRate; }
+    double returnReproductionRate(){ return reproductionRate; }
+    double returnWaterConsumption(){ return waterConsumption; }
     
     
 private:
