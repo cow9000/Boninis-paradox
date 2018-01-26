@@ -16,33 +16,43 @@ public:
     
     virtual void init() = 0;
     
-    sf::Color returnMaxColorValues() {
-        return maxColorValues;
-    }
-    sf::Color returnMinColorValues() {
-        return minColorValues;
-    }
+    sf::Color returnMaxColorValues() { return maxColorValues; }
+    sf::Color returnMinColorValues() { return minColorValues; }
+    sf::Color returnCurrentColorValues() { return currentColorValues;}
     
-    sf::Color returnCurrentColorValues() {
-        return currentColorValues;
-    }
+    //Drawing return variables
+    sf::Vector2f returnSize(){ return size; }
+    sf::Vector2f returnPosition(){ return position; }
     
-    sf::Vector2f returnSize(){
-        return size;
-    }
-    
-    sf::Vector2f returnPosition(){
-        return position;
-    }
+    bool returnCanLive(){ return canLive; }
+    bool returnLiving(){ return living; }
+    bool returnNeedsPartner() { return needsPartner;  }
     
     
 private:
+    //Colors will represent how "alive the ground is, if indeed that tile is alive"
     sf::Color maxColorValues;
     sf::Color minColorValues;
     sf::Color currentColorValues;
     
     sf::Vector2f position;
     sf::Vector2f size;
+
+    //Is this a rock, or a living plant things
+    bool canLive;
+    
+    //If it is living, we assume it will grow.
+    bool living;
+    bool needsPartner;
+    
+    //Rate of growth
+    double growthRate;
+    double reproductionRate;
+    
+    double energy;
+    double waterConsumption;
+    double height;
+    
     
     
 };
