@@ -8,6 +8,10 @@
 
 #include "Headers/PlayState.hpp"
 
+PlayState::~PlayState(){
+    
+}
+
 void PlayState::processState(sf::Event &event){
     if(event.type == sf::Event::MouseButtonPressed){
         

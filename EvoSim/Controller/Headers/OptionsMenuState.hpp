@@ -13,6 +13,7 @@
 
 class OptionsMenuState : public State {
 public:
+    ~OptionsMenuState();
     void processState(sf::Event &event);
     void updateState();
     void renderState(sf::RenderTarget &renderWindow);

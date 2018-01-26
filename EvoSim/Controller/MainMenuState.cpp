@@ -8,6 +8,10 @@
 
 #include "Headers/MainMenuState.hpp"
 
+MainMenuState::~MainMenuState(){
+    
+}
+
 void MainMenuState::processState(sf::Event &event){
     if(event.type == sf::Event::MouseButtonPressed){
         

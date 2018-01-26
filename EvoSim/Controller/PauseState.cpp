@@ -8,6 +8,10 @@
 
 #include "Headers/PauseState.hpp"
 
+PauseState::~PauseState(){
+    
+}
+
 void PauseState::processState(sf::Event &event){
     if(event.type == sf::Event::MouseButtonPressed){
         

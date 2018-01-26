@@ -13,6 +13,7 @@
 
 class PauseState : public State {
 public:
+    ~PauseState();
     void processState(sf::Event &event);
     void updateState();
     void renderState(sf::RenderTarget &renderWindow);

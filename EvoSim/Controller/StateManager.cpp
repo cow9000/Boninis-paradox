@@ -44,14 +44,14 @@ State& StateManager::returnCurrentState(){
     return *currentState;
 }
 
-void StateManager::setCurrentState(AllowedStates::States changeToState){
-    if(changeToState == AllowedStates::States::MAINMENU){
+void StateManager::setCurrentState(States::implementedStates changeToState){
+    if(changeToState == States::implementedStates::MAINMENU){
         currentState = mainMenuState;
-    }else if(changeToState == AllowedStates::States::OPTIONS){
+    }else if(changeToState == States::implementedStates::OPTIONS){
         currentState = optionsMenuState;
-    }else if(changeToState == AllowedStates::States::PLAY){
+    }else if(changeToState == States::implementedStates::PLAY){
         currentState = playState;
-    }else if(changeToState == AllowedStates::States::PAUSE){
+    }else if(changeToState == States::implementedStates::PAUSE){
         currentState = pauseState;
     }
 }

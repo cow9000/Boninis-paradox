@@ -6,9 +6,17 @@
 #include "State.hpp"
 #include <stack>
 
-struct AllowedStates{
-    enum States {MAINMENU,OPTIONS,PLAY,PAUSE};
-};
+namespace States{
+
+    enum implementedStates
+    {
+        MAINMENU,
+        OPTIONS,
+        PLAY,
+        PAUSE
+    };
+    
+}
 
 class StateManager{
 public:
@@ -22,7 +30,7 @@ public:
     
     State& returnCurrentState();
     
-    void setCurrentState(AllowedStates::States changeToState);
+    void setCurrentState(States::implementedStates changeToState);
     
 private:
     State* mainMenuState;

@@ -8,6 +8,10 @@
 
 #include "Headers/OptionsMenuState.hpp"
 
+OptionsMenuState::~OptionsMenuState(){
+    
+}
+
 void OptionsMenuState::processState(sf::Event &event){
     if(event.type == sf::Event::MouseButtonPressed){
         

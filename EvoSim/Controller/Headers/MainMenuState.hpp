@@ -13,6 +13,7 @@
 
 class MainMenuState : public State {
 public:
+    ~MainMenuState();
     void processState(sf::Event &event);
     void updateState();
     void renderState(sf::RenderTarget &renderWindow);
