@@ -40,18 +40,15 @@ private:
 
     //Is this a rock, or a living plant things
     bool canLive;
-    
     //If it is living, we assume it will grow.
     bool living;
+    //Does it need a partner for reproduction
     bool needsPartner;
     
-    //Rate of growth
+    //Living rates and data needed
     double growthRate;
     double reproductionRate;
-    
-    double energy;
     double waterConsumption;
-    double height;
     
     
     
