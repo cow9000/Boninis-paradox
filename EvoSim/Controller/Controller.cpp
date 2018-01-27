@@ -9,7 +9,7 @@
 #include "Headers/Controller.hpp"
 
 Controller::Controller(){
-    window.create(sf::VideoMode(640,480), "Evolution Simulator");
+    window.create(sf::VideoMode(640,480), "Bonini's Paradox");
     
     //Start the game
     start();

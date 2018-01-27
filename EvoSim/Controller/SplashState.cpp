@@ -12,6 +12,8 @@
 
 SplashState::SplashState(StateManager* stateManager){
 	this->stateManager = stateManager;
+	this->wait = true;
+	this->timePassed = 0;
 }
 
 SplashState::~SplashState(){
@@ -28,20 +30,22 @@ void SplashState::updateState(){
 	if(timePassed >= 255){
 		stateManager->setCurrentState(States::implementedStates::MAINMENU);
 	}
+
+	if(splashClock.getElapsedTime().asSeconds() > 1 && wait){
+		wait = false;
+		splashClock.restart();
+	}
+
 }
 
 void SplashState::renderState(sf::RenderTarget &renderWindow){
-	if(splashClock.getElapsedTime().asSeconds() > 1){
+	if(wait == false){
 		sf::RectangleShape splashColor;
 		splashColor.setSize(sf::Vector2f(renderWindow.getSize().x, renderWindow.getSize().y));
 
-		if(timePassed < 60){
-			timePassed = splashClock.getElapsedTime().asMilliseconds()/4;
-		}else{
-			timePassed = splashClock.getElapsedTime().asSeconds() * 100;
-		}
+		timePassed = splashClock.getElapsedTime().asSeconds() * 350;
 
-		sf::Color splashFade(255,255,255,timePassed);
+		sf::Color splashFade(0,0,0,timePassed);
 
 
 		if(timePassed >= 255){
