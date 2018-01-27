@@ -8,6 +8,11 @@
 
 #include "Headers/PauseState.hpp"
 
+PauseState::PauseState(StateManager* stateManager){
+	this->stateManager = stateManager;
+}
+
+
 PauseState::~PauseState(){
     
 }

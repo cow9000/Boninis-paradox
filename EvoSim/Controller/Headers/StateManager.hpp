@@ -10,6 +10,7 @@ namespace States{
 
     enum implementedStates
     {
+    	SPLASH,
         MAINMENU,
         OPTIONS,
         PLAY,
@@ -23,6 +24,7 @@ public:
     StateManager();
     ~StateManager();
     
+    State& returnSplashState();
     State& returnMainMenuState();
     State& returnOptionsMenuState();
     State& returnPlayState();
@@ -37,6 +39,7 @@ private:
     State* optionsMenuState;
     State* playState;
     State* pauseState;
+    State* splashState;
     
     State* currentState;
 };

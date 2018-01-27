@@ -13,6 +13,7 @@
 
 class PlayState : public State {
 public:
+	PlayState(StateManager* stateManager);
     ~PlayState();
     void processState(sf::Event &event);
     void updateState();

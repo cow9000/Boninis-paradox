@@ -8,6 +8,11 @@
 
 #include "Headers/OptionsMenuState.hpp"
 
+OptionsMenuState::OptionsMenuState(StateManager* stateManager){
+	this->stateManager = stateManager;
+}
+
+
 OptionsMenuState::~OptionsMenuState(){
     
 }

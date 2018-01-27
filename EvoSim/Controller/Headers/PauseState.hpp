@@ -13,6 +13,7 @@
 
 class PauseState : public State {
 public:
+	PauseState(StateManager* stateManager);
     ~PauseState();
     void processState(sf::Event &event);
     void updateState();

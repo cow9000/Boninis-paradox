@@ -29,6 +29,7 @@ public:
     double returnGrowthRare(){ return growthRate; }
     double returnReproductionRate(){ return reproductionRate; }
     double returnWaterConsumption(){ return waterConsumption; }
+    double returnErosionResistance(){ return erosionResistance; }
     
     
 private:
@@ -61,6 +62,7 @@ private:
     double growthRate;
     double reproductionRate;
     double waterConsumption;
+    double erosionResistance;
     
     
     

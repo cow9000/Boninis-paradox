@@ -1,25 +1,31 @@
 #include "Headers/StateManager.hpp"
+#include "Headers/SplashState.hpp"
 #include "Headers/MainMenuState.hpp"
 #include "Headers/OptionsMenuState.hpp"
 #include "Headers/PlayState.hpp"
 #include "Headers/PauseState.hpp"
 
 StateManager::StateManager(){
-    this->mainMenuState = new MainMenuState();
-    this->optionsMenuState = new OptionsMenuState();
-    this->playState = new PlayState();
-    this->pauseState = new PauseState();
+	this->splashState = new SplashState(this);
+    this->mainMenuState = new MainMenuState(this);
+    this->optionsMenuState = new OptionsMenuState(this);
+    this->playState = new PlayState(this);
+    this->pauseState = new PauseState(this);
     
-    this->currentState = mainMenuState;
+    this->currentState = splashState;
 }
 
 StateManager::~StateManager(){
+	delete splashState;
     delete mainMenuState;
     delete optionsMenuState;
     delete playState;
     delete pauseState;
 }
 
+State& StateManager::returnSplashState(){
+	return *splashState;
+}
 
 State& StateManager::returnMainMenuState(){
     return *mainMenuState;

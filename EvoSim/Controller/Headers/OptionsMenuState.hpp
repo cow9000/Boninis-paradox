@@ -13,6 +13,7 @@
 
 class OptionsMenuState : public State {
 public:
+	OptionsMenuState(StateManager* stateManager);
     ~OptionsMenuState();
     void processState(sf::Event &event);
     void updateState();

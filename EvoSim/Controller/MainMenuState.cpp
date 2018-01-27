@@ -8,6 +8,10 @@
 
 #include "Headers/MainMenuState.hpp"
 
+MainMenuState::MainMenuState(StateManager* stateManager){
+	this->stateManager = stateManager;
+}
+
 MainMenuState::~MainMenuState(){
     
 }

@@ -8,6 +8,11 @@
 
 #include "Headers/PlayState.hpp"
 
+PlayState::PlayState(StateManager* stateManager){
+	this->stateManager = stateManager;
+}
+
+
 PlayState::~PlayState(){
     
 }

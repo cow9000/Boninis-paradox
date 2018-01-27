@@ -18,23 +18,24 @@ Controller::Controller(){
 void Controller::start(){
     
     sf::Clock fpsClock;
-    const sf::Time timePerFrame = sf::seconds(1.f/60.f);
-    sf::Time elapsedTime = sf::Time::Zero;
+	sf::Time accumulator = sf::Time::Zero;
+	sf::Time ups = sf::seconds(1.f / 60.f);
     
     while(window.isOpen()){
         processWindow();
         
         
-        sf::Time timeSinceLastUpdate = fpsClock.restart();
-        timeSinceLastUpdate += elapsedTime;
         
-        while(timeSinceLastUpdate > timePerFrame){
+
+        while(accumulator > ups){
             //Limit FPS here to 60 FPS
-            timeSinceLastUpdate -= timePerFrame;
-            updateWindow(timePerFrame);
+        	accumulator -= ups;
+            updateWindow(accumulator);
             
         }
+
         drawWindow();
+        accumulator += fpsClock.restart();
     }
 }
 
