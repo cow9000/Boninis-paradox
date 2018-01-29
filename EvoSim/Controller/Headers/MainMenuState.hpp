@@ -20,6 +20,15 @@ public:
     void renderState(sf::RenderTarget &renderWindow);
 private:
     sf::Font mainFont;
+    sf::Font titleFont;
+
+    sf::Text mainTitle;
+    sf::Text titleOne;
+    sf::Text titleTwo;
+    sf::Text titleThree;
+
+    int buttonSelected;
+
 };
 
 #endif /* MainMenuState_hpp */

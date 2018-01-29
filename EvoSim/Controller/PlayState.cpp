@@ -27,7 +27,7 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     }
 }
 void PlayState::updateState(sf::RenderTarget &renderWindow){
-    
+
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
     

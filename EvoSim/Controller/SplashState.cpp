@@ -23,11 +23,10 @@ SplashState::~SplashState(){
 }
 
 void SplashState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
-    if(event.type == sf::Event::MouseButtonPressed){
+    if(event.type == sf::Event::MouseButtonPressed || event.type == sf::Event::TextEntered){
     	stateManager->setCurrentState(States::implementedStates::MAINMENU);
     }else if(event.type == sf::Event::Resized){
     	renderWindow.setView(sf::View(sf::FloatRect(0.f,0.f,event.size.width,event.size.height)));
-
     }
 }
 
