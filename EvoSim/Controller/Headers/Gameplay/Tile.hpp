@@ -36,10 +36,14 @@ public:
     bool returnLiving(){ return living; }
     bool returnNeedsPartner() { return needsPartner;  }
     bool returnFlammable() { return flammable; }
+    bool returnIsOnFire(){ return isOnFire; }
     
     double returnGrowthRare(){ return growthRate; }
     double returnReproductionRate(){ return reproductionRate; }
     double returnWaterConsumption(){ return waterConsumption; }
+    double returnCurrentWaterLevels() { return currentWaterLevels; }
+    double returnMaxWaterLevels(){ return maxWaterLevels; }
+    double returnMinWaterLevels(){ return minWaterLevels; }
     double returnErosionResistance(){ return erosionResistance; }
     double returnDensity(){ return density; }
     double returnMass(){ return density * (size.x * size.y);}
@@ -53,6 +57,9 @@ private:
     void assignPosition();
     void assignSize();
     void assignTileProperties();
+    
+    void die();
+    void updateTile();
     
     GameManager::TileType tileType;
     GameManager::BiomeType biomeType;
@@ -72,11 +79,17 @@ private:
     //Does it need a partner for reproduction
     bool needsPartner;
     bool flammable;
+    bool isOnFire;
     
     //Living rates and data needed
     double growthRate;
     double reproductionRate;
     double waterConsumption;
+    
+    
+    double currentWaterLevels;
+    double maxWaterLevels;
+    double minWaterLevels;
 
 
     //Natural consequences

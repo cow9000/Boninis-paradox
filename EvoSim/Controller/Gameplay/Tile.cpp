@@ -82,6 +82,8 @@ void Tile::assignTileProperties(){
     if(canLive) flammable = true;
     else flammable = false;
     
+    isOnFire = false;
+    
     //Living rates and data needed
     growthRate = 0.23;
     reproductionRate = 0.01;
@@ -95,3 +97,27 @@ void Tile::assignTileProperties(){
     density = 0.68;
     
 }
+
+void Tile::die(){
+    living = false;
+}
+
+void Tile::updateTile(){
+    
+    
+    
+    
+    
+    
+    /////////////////////////////
+    //Tile Dies.
+    if(currentWaterLevels < minWaterLevels) die();
+    
+    //If tile is dead change color
+    if(!living){
+        double grayScale = (currentColorValues.r + currentColorValues.g + currentColorValues.b)/3;
+        currentColorValues = sf::Color(grayScale,grayScale,grayScale);
+    }
+    //////////////////////////////
+}
+
