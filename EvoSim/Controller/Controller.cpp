@@ -11,12 +11,12 @@
 Controller::Controller(){
     window.create(sf::VideoMode(640,480), "Bonini's Paradox");
     
+    
     //Start the game
     start();
 }
 
 void Controller::start(){
-    
     sf::Clock fpsClock;
 	sf::Time accumulator = sf::Time::Zero;
 	sf::Time ups = sf::seconds(1.f / 60.f);

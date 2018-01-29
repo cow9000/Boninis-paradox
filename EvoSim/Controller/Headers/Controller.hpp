@@ -14,7 +14,7 @@
 
 class Controller{
     public:
-        Controller(  );
+        Controller( );
         sf::RenderWindow& returnWindow();
     private:
     

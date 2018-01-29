@@ -23,6 +23,9 @@ public:
     
     GameManager::BiomeType returnBiomeType(){ return biomeType; }
     
+    std::vector<*Tile>& returnTilesInBiome(){ return tilesInBiome; }
+    
+    
     
 private:
     

@@ -16,8 +16,8 @@ class Tile{
 public:
 
 	Tile();
-	Tile(GameManager::TileType typeOfTyle);
-	Tile(GameManager::TileType typeOfTyle, GameManager::BiomeType typeOfBiome);
+	Tile(GameManager::TileType tileType);
+	Tile(GameManager::TileType tileType, GameManager::BiomeType biomeType);
 
 	~Tile();
 
@@ -48,7 +48,7 @@ public:
 private:
     
     //Methods needed for tile creation
-    void init(GameManager::TileType typeOfTyle, GameManager::BiomeType typeOfBiome);
+    void init(GameManager::TileType tileType, GameManager::BiomeType biomeType);
     void assignColors();
     void assignPosition();
     void assignSize();
