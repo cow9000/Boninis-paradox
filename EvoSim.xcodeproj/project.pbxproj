@@ -20,6 +20,7 @@
 		71A6D44F201BA8D9005E3AA1 /* OptionsMenuState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A6D44D201BA8D9005E3AA1 /* OptionsMenuState.cpp */; };
 		71A6D452201BA924005E3AA1 /* PlayState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A6D450201BA924005E3AA1 /* PlayState.cpp */; };
 		71A6D455201BA954005E3AA1 /* PauseState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A6D453201BA954005E3AA1 /* PauseState.cpp */; };
+		71AADE8B201FA08600E6B2FA /* SplashState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71AADE8A201FA08500E6B2FA /* SplashState.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,7 +50,6 @@
 		714D2A8120191B1C00990316 /* Controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
 		718A2B50201BBBA7002C2EB3 /* Tile.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tile.cpp; sourceTree = "<group>"; };
 		718A2B51201BBBA7002C2EB3 /* Tile.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tile.hpp; sourceTree = "<group>"; };
-		718A2B53201BBE40002C2EB3 /* TileManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TileManager.hpp; sourceTree = "<group>"; };
 		71A6D44A201BA6C2005E3AA1 /* MainMenuState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuState.cpp; sourceTree = "<group>"; };
 		71A6D44B201BA6C2005E3AA1 /* MainMenuState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainMenuState.hpp; sourceTree = "<group>"; };
 		71A6D44D201BA8D9005E3AA1 /* OptionsMenuState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OptionsMenuState.cpp; sourceTree = "<group>"; };
@@ -58,6 +58,10 @@
 		71A6D451201BA924005E3AA1 /* PlayState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayState.hpp; sourceTree = "<group>"; };
 		71A6D453201BA954005E3AA1 /* PauseState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PauseState.cpp; sourceTree = "<group>"; };
 		71A6D454201BA954005E3AA1 /* PauseState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PauseState.hpp; sourceTree = "<group>"; };
+		71AADE88201FA06900E6B2FA /* GameManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameManager.hpp; sourceTree = "<group>"; };
+		71AADE89201FA07800E6B2FA /* SplashState.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = SplashState.hpp; path = EvoSim/Controller/Headers/SplashState.hpp; sourceTree = SOURCE_ROOT; };
+		71AADE8A201FA08500E6B2FA /* SplashState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SplashState.cpp; path = EvoSim/Controller/SplashState.cpp; sourceTree = SOURCE_ROOT; };
+		71AADE8C201FA90300E6B2FA /* Biome.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Biome.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,7 @@
 				71A6D457201BAAD9005E3AA1 /* Gameplay */,
 				714D2A7C20191B0500990316 /* Runner.cpp */,
 				714D2A8020191B1C00990316 /* Controller.cpp */,
+				71AADE8A201FA08500E6B2FA /* SplashState.cpp */,
 				71062CF7201A5B0E002A0217 /* StateManager.cpp */,
 				71A6D44A201BA6C2005E3AA1 /* MainMenuState.cpp */,
 				71A6D44D201BA8D9005E3AA1 /* OptionsMenuState.cpp */,
@@ -137,6 +142,7 @@
 				71062CF5201A5B09002A0217 /* State.hpp */,
 				71062CF6201A5B09002A0217 /* StateManager.hpp */,
 				714D2A8120191B1C00990316 /* Controller.hpp */,
+				71AADE89201FA07800E6B2FA /* SplashState.hpp */,
 				71A6D44B201BA6C2005E3AA1 /* MainMenuState.hpp */,
 				71A6D44E201BA8D9005E3AA1 /* OptionsMenuState.hpp */,
 				71A6D451201BA924005E3AA1 /* PlayState.hpp */,
@@ -155,8 +161,9 @@
 		71A6D456201BAAC9005E3AA1 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				71AADE88201FA06900E6B2FA /* GameManager.hpp */,
 				718A2B51201BBBA7002C2EB3 /* Tile.hpp */,
-				718A2B53201BBE40002C2EB3 /* TileManager.hpp */,
+				71AADE8C201FA90300E6B2FA /* Biome.hpp */,
 			);
 			path = Gameplay;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 			files = (
 				71062CF8201A5B0E002A0217 /* StateManager.cpp in Sources */,
 				71A6D452201BA924005E3AA1 /* PlayState.cpp in Sources */,
+				71AADE8B201FA08600E6B2FA /* SplashState.cpp in Sources */,
 				71A6D44F201BA8D9005E3AA1 /* OptionsMenuState.cpp in Sources */,
 				71A6D44C201BA6C2005E3AA1 /* MainMenuState.cpp in Sources */,
 				714D2A7D20191B0500990316 /* Runner.cpp in Sources */,
