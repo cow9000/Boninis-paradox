@@ -10,9 +10,20 @@
 #define Tile_hpp
 
 #include <SFML/Graphics.hpp>
+#include "GameManager.hpp"
 
 class Tile{
 public:
+
+	Tile();
+	Tile(GameManager::TileType typeOfTyle);
+	Tile(GameManager::TileType typeOfTyle, GameManager::BiomeType typeOfBiome);
+
+	~Tile();
+
+	GameManager::TileType returnTileType() { return tileType; }
+	GameManager::BiomeType returnBiomeType() { return biomeType; }
+
     sf::Color returnMaxColorValues() { return maxColorValues; }
     sf::Color returnMinColorValues() { return minColorValues; }
     sf::Color returnCurrentColorValues() { return currentColorValues;}
@@ -30,17 +41,21 @@ public:
     double returnReproductionRate(){ return reproductionRate; }
     double returnWaterConsumption(){ return waterConsumption; }
     double returnErosionResistance(){ return erosionResistance; }
+    double returnDensity(){ return density; }
+    double returnMass(){ return density * (size.x * size.y);}
     
     
 private:
     
     //Methods needed for tile creation
-    virtual void init() = 0;
-    virtual void assignColors() = 0;
-    virtual void assignPosition() = 0;
-    virtual void assignSize() = 0;
-    virtual void assignTileProperties() = 0;
+    void init(GameManager::TileType typeOfTyle, GameManager::BiomeType typeOfBiome);
+    void assignColors();
+    void assignPosition();
+    void assignSize();
+    void assignTileProperties();
     
+    GameManager::TileType tileType;
+    GameManager::BiomeType biomeType;
     
     //Colors will represent how "alive the ground is, if indeed that tile is alive"
     sf::Color maxColorValues;
@@ -62,8 +77,12 @@ private:
     double growthRate;
     double reproductionRate;
     double waterConsumption;
+
+
+    //Natural consequences
     double erosionResistance;
-    
+    double density;
+
     
     
 };

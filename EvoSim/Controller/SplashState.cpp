@@ -14,6 +14,8 @@ SplashState::SplashState(StateManager* stateManager){
 	this->stateManager = stateManager;
 	this->wait = true;
 	this->timePassed = 0;
+
+	logoTexture.loadFromFile("Assets/Logo.png");
 }
 
 SplashState::~SplashState(){
@@ -22,6 +24,7 @@ SplashState::~SplashState(){
 
 void SplashState::processState(sf::Event &event){
     if(event.type == sf::Event::MouseButtonPressed){
+    	stateManager->setCurrentState(States::implementedStates::MAINMENU);
     }
 }
 
@@ -39,6 +42,13 @@ void SplashState::updateState(){
 }
 
 void SplashState::renderState(sf::RenderTarget &renderWindow){
+
+	//Draw logo
+	sf::Sprite logo(logoTexture);
+	logo.setOrigin(logo.getLocalBounds().width/2,logo.getLocalBounds().height/2);
+	logo.setPosition(renderWindow.getSize().x/2,renderWindow.getSize().y/2);
+	renderWindow.draw(logo);
+
 	if(wait == false){
 		sf::RectangleShape splashColor;
 		splashColor.setSize(sf::Vector2f(renderWindow.getSize().x, renderWindow.getSize().y));

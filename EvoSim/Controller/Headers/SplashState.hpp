@@ -22,6 +22,7 @@ private:
     sf::Clock splashClock;
     double timePassed;
     bool wait;
+    sf::Texture logoTexture;
 };
 
 

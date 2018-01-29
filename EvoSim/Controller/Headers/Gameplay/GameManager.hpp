@@ -1,0 +1,37 @@
+//
+//  GameManager.hpp
+//  EvoSim
+//
+//  Created by Vawdrey, Derek on 1/26/18.
+//  Copyright © 2018 Vawdrey, Derek. All rights reserved.
+//
+
+#ifndef GameManager_hpp
+#define GameManager_hpp
+
+namespace GameManager{
+    //Tiles that are able to be created
+    enum TileType{
+    	//Living tile types
+    	GRASS, TREE,
+
+		//Not living tile types
+		ROCK, WATER, SAND, MUD
+
+    };
+    
+
+    //http://kids.nceas.ucsb.edu/biomes/
+    enum BiomeType{
+    	//Aquatic Biomes
+    	FRESHWATER, FRESHWATER_WETLANDS, MARINE, CORAL_REEF, ESTUARIES,
+
+		//Terrestrial Biomes
+    	TUNDRA, RAINFOREST, SAVANNA, TAIGA, TEMPERATE_FOREST, TEMPERATE_GRASSLAND, ALPINE, CHAPARRAL, DESERT
+    };
+
+    const double GRAVITY = 0.98;
+
+};
+
+#endif /* GameManager_hpp */
