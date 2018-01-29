@@ -34,20 +34,54 @@ void Tile::init(GameManager::TileType tileType, GameManager::BiomeType biomeType
 
 void Tile::assignColors(){
     
+    //Colors will represent how "alive the ground is, if indeed that tile is alive"
+    maxColorValues = sf::Color(0,0,0);
+    minColorValues = sf::Color(0,0,0);
+    currentColorValues = sf::Color(0,0,0);
+    
+    
     
 }
 
 void Tile::assignPosition(){
     
+    position = sf::Vector2f(2,2);
     
 }
 
 void Tile::assignSize(){
     
+    size = sf::Vector2f(1,1);
     
 }
 
 void Tile::assignTileProperties(){
     
+    //Is this a rock, or a living plant things
+    canLive = false;
+    
+    //If the tile can live, then it is living, if not
+    if(canLive) living = true;
+    else living = false;
+
+    //If it is living it needs a partner (will implement Asexual reproduction later)
+    if(living) needsPartner = true;
+    else needsPartner = false;
+    
+    //If the object can live (is made of wood, grass, fur, etc, it is flammable.
+    if(canLive) flammable = true;
+    else flammable = false;
+    
+    //Living rates and data needed
+    growthRate = 0.23;
+    reproductionRate = 0.01;
+    
+    //If Tile is living it will consume water, if it isn't, it won't
+    if(living) waterConsumption = 0.01;
+    else waterConsumption = 0;
+    
+    //Natural consequences
+    erosionResistance = 0.02;
+    density = 0.68;
     
 }
