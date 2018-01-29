@@ -17,12 +17,12 @@ OptionsMenuState::~OptionsMenuState(){
     
 }
 
-void OptionsMenuState::processState(sf::Event &event){
+void OptionsMenuState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     if(event.type == sf::Event::MouseButtonPressed){
         
     }
 }
-void OptionsMenuState::updateState(){
+void OptionsMenuState::updateState(sf::RenderTarget &renderWindow){
     
 }
 void OptionsMenuState::renderState(sf::RenderTarget &renderWindow){

@@ -15,9 +15,11 @@ class MainMenuState : public State {
 public:
 	MainMenuState(StateManager* stateManager);
     ~MainMenuState();
-    void processState(sf::Event &event);
-    void updateState();
+    void processState(sf::Event &event, sf::RenderTarget &renderWindow);
+    void updateState(sf::RenderTarget &renderWindow);
     void renderState(sf::RenderTarget &renderWindow);
+private:
+    sf::Font mainFont;
 };
 
 #endif /* MainMenuState_hpp */

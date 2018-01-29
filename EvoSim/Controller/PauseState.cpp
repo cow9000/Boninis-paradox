@@ -17,12 +17,12 @@ PauseState::~PauseState(){
     
 }
 
-void PauseState::processState(sf::Event &event){
+void PauseState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     if(event.type == sf::Event::MouseButtonPressed){
         
     }
 }
-void PauseState::updateState(){
+void PauseState::updateState(sf::RenderTarget &renderWindow){
     
 }
 void PauseState::renderState(sf::RenderTarget &renderWindow){

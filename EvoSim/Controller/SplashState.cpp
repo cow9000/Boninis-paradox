@@ -22,13 +22,16 @@ SplashState::~SplashState(){
     
 }
 
-void SplashState::processState(sf::Event &event){
+void SplashState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     if(event.type == sf::Event::MouseButtonPressed){
     	stateManager->setCurrentState(States::implementedStates::MAINMENU);
+    }else if(event.type == sf::Event::Resized){
+    	renderWindow.setView(sf::View(sf::FloatRect(0.f,0.f,event.size.width,event.size.height)));
+
     }
 }
 
-void SplashState::updateState(){
+void SplashState::updateState(sf::RenderTarget &renderWindow){
     //If timePassed is creater than 255 + 60
 	if(timePassed >= 255){
 		stateManager->setCurrentState(States::implementedStates::MAINMENU);
@@ -45,7 +48,9 @@ void SplashState::renderState(sf::RenderTarget &renderWindow){
 
 	//Draw logo
 	sf::Sprite logo(logoTexture);
-	logo.setOrigin(logo.getLocalBounds().width/2,logo.getLocalBounds().height/2);
+	sf::FloatRect logoRect = logo.getLocalBounds();
+
+	logo.setOrigin(logoRect.left + logoRect.width/2.0f, logoRect.top  + logoRect.height/2.0f);
 	logo.setPosition(renderWindow.getSize().x/2,renderWindow.getSize().y/2);
 	renderWindow.draw(logo);
 

@@ -15,8 +15,8 @@ class OptionsMenuState : public State {
 public:
 	OptionsMenuState(StateManager* stateManager);
     ~OptionsMenuState();
-    void processState(sf::Event &event);
-    void updateState();
+    void processState(sf::Event &event, sf::RenderTarget &renderWindow);
+    void updateState(sf::RenderTarget &renderWindow);
     void renderState(sf::RenderTarget &renderWindow);
 };
 #endif /* OptionsMenuState_hpp */

@@ -15,8 +15,8 @@ class PauseState : public State {
 public:
 	PauseState(StateManager* stateManager);
     ~PauseState();
-    void processState(sf::Event &event);
-    void updateState();
+    void processState(sf::Event &event, sf::RenderTarget &renderWindow);
+    void updateState(sf::RenderTarget &renderWindow);
     void renderState(sf::RenderTarget &renderWindow);
 };
 

@@ -10,6 +10,7 @@
 
 PlayState::PlayState(StateManager* stateManager){
 	this->stateManager = stateManager;
+	this->changeWindowSize = false;
 }
 
 
@@ -17,15 +18,19 @@ PlayState::~PlayState(){
     
 }
 
-void PlayState::processState(sf::Event &event){
+void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     if(event.type == sf::Event::MouseButtonPressed){
         
+    }else if(event.type == sf::Event::Resized){
+    	renderWindow.setView(sf::View(sf::FloatRect(0.f,0.f,event.size.width,event.size.height)));
+
     }
 }
-void PlayState::updateState(){
+void PlayState::updateState(sf::RenderTarget &renderWindow){
     
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
     
+	sf::Text gameText;
     
 }

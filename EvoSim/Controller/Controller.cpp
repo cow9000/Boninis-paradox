@@ -49,7 +49,7 @@ void Controller::processWindow(){
         if(event.type == sf::Event::Closed){
                 window.close();
         }else{
-            stateManager.returnCurrentState().processState(event);
+            stateManager.returnCurrentState().processState(event,window);
         }
         
     }
@@ -57,7 +57,7 @@ void Controller::processWindow(){
 
 void Controller::updateWindow(sf::Time timePerFrame){
     //Put updating for game states in here
-    stateManager.returnCurrentState().updateState();
+    stateManager.returnCurrentState().updateState(window);
 }
 
 void Controller::drawWindow(){
