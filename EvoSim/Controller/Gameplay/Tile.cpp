@@ -7,6 +7,8 @@
 //
 
 #include "../Headers/Gameplay/Tile.hpp"
+#include <stdlib.h>
+#include <time.h>
 
 Tile::Tile(){
     init(GameManager::TileType::WATER, GameManager::BiomeType::FRESHWATER);
@@ -34,10 +36,15 @@ void Tile::init(GameManager::TileType tileType, GameManager::BiomeType biomeType
 
 void Tile::assignColors(){
     
-    //Colors will represent how "alive the ground is, if indeed that tile is alive"
+    std::srand (std::time(NULL));
+    
+    //Colors will represent how "alive the ground is, if indeed that tile is alive, or how rocky it is"
     maxColorValues = sf::Color(0,0,0);
     minColorValues = sf::Color(0,0,0);
-    currentColorValues = sf::Color(0,0,0);
+    
+    
+    
+    currentColorValues = sf::Color(rand() % maxColorValues.r + minColorValues.r,rand() % maxColorValues.g + minColorValues.g,rand() % maxColorValues.b + minColorValues.b);
     
     
     
@@ -57,8 +64,11 @@ void Tile::assignSize(){
 
 void Tile::assignTileProperties(){
     
-    //Is this a rock, or a living plant things
-    canLive = false;
+    if(tileType == GameManager::TileType::GRASS || tileType == GameManager::TileType::TREE){
+        canLive = true;
+    }else{
+        canLive = false;
+    }
     
     //If the tile can live, then it is living, if not
     if(canLive) living = true;
