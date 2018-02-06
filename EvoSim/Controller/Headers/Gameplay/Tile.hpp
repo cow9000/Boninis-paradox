@@ -16,8 +16,8 @@ class Tile{
 public:
 
 	Tile();
-	Tile(GameManager::TileType tileType);
-	Tile(GameManager::TileType tileType, GameManager::BiomeType biomeType);
+    Tile(sf::Vector2f position);
+    Tile(sf::Vector2f position, GameManager::TileType tileType);
 
 	~Tile();
 
