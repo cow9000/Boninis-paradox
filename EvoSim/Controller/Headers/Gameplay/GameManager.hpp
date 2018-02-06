@@ -9,6 +9,8 @@
 #ifndef GameManager_hpp
 #define GameManager_hpp
 
+#include <SFML/Graphics.hpp>
+
 namespace GameManager{
     //Tiles that are able to be created
     enum TileType{

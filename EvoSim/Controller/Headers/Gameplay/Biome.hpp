@@ -23,7 +23,7 @@ public:
     
     GameManager::BiomeType returnBiomeType(){ return biomeType; }
     
-    std::vector<*Tile>& returnTilesInBiome(){ return tilesInBiome; }
+    std::vector<Tile>& returnTilesInBiome(){ return tilesInBiome; }
     
     
     
@@ -37,7 +37,7 @@ private:
     GameManager::BiomeType biomeType;
     
     //Tiles in biome
-    std::vector<*Tile> tilesInBiome;
+    std::vector<Tile> tilesInBiome;
 };
 
 #endif /* Biome_h */
