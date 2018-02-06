@@ -40,13 +40,29 @@ void Tile::assignColors(){
     
     std::srand (std::time(NULL));
     
+    
     //Colors will represent how "alive the ground is, if indeed that tile is alive, or how rocky it is"
-    maxColorValues = sf::Color(0,0,0);
-    minColorValues = sf::Color(0,0,0);
+    maxColorValues = sf::Color(0,255,0);
+    minColorValues = sf::Color(0,127,0);
     
+    if(tileType == GameManager::TileType::SAND){
+        maxColorValues = sf::Color(255,255,204);
+        minColorValues = sf::Color(255,255,150);
+    }else if(tileType == GameManager::TileType::DIRT || tileType == GameManager::TileType::MUD){
+        maxColorValues = sf::Color(255, 150, 255);
+        minColorValues = sf::Color(139, 68, 143);
+    }else if(tileType == GameManager::TileType::ROCK){
+        maxColorValues = sf::Color(222, 222, 222);
+        minColorValues = sf::Color(119, 119, 119);
+    }
     
+    if(tileType != GameManager::TileType::ROCK){
+        currentColorValues = sf::Color(rand() % maxColorValues.r + minColorValues.r,rand() % maxColorValues.g + minColorValues.g,rand() % maxColorValues.b + minColorValues.b);
+    }else{
+        double value = rand() % maxColorValues.r + minColorValues.r;
+        currentColorValues = sf::Color(value,value,value);
+    }
     
-    currentColorValues = sf::Color(rand() % maxColorValues.r + minColorValues.r,rand() % maxColorValues.g + minColorValues.g,rand() % maxColorValues.b + minColorValues.b);
     
     
     
@@ -98,11 +114,18 @@ void Tile::die(){
     living = false;
 }
 
-void Tile::updateTile(){
+void Tile::updateTile(bool isRaining, double waterDistance, int temperature){
     
     
+    if(isRaining){
+        currentWaterLevels ++;
+    }
+    //0 to 1, 0 being far away. 1 being right by
+    currentWaterLevels += waterDistance;
     
+    currentWaterLevels -= temperature/32;
     
+    if(currentWaterLevels > maxWaterLevels) currentWaterLevels = maxWaterLevels;
     
     
     /////////////////////////////
@@ -110,9 +133,15 @@ void Tile::updateTile(){
     if(currentWaterLevels < minWaterLevels) die();
     
     //If tile is dead change color
-    if(!living){
+    if(!living && canLive){
         double grayScale = (currentColorValues.r + currentColorValues.g + currentColorValues.b)/3;
         currentColorValues = sf::Color(grayScale,grayScale,grayScale);
+    }else if(living && canLive){
+        //TODO: MODIFY THIS SO IT FITS WITH PERCENTAGES BETWEEN CURRENTWATERLEVERS AND MAXWATERLEVELS/MINWATERLEVELS
+        double R = 2;
+        double G = 2;
+        double B = 2;
+        currentColorValues = sf::Color(R,G,B);
     }
     //////////////////////////////
 }

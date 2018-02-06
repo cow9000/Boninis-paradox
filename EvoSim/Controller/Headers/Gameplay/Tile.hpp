@@ -48,7 +48,7 @@ public:
     double returnDensity(){ return density; }
     double returnMass(){ return density * (size.x * size.y);}
     
-    
+    void updateTile(bool isRaining, double waterDistance, int temperature);
 private:
     
     //Methods needed for tile creation
@@ -58,7 +58,7 @@ private:
     void assignTileProperties();
     
     void die();
-    void updateTile();
+    
     
     GameManager::TileType tileType;
     GameManager::BiomeType biomeType;
