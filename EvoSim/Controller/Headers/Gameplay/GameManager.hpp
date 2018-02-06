@@ -18,7 +18,7 @@ namespace GameManager{
     	GRASS, TREE,
 
 		//Not living tile types
-		ROCK, WATER, SAND, MUD
+		ROCK, WATER, SAND, MUD, DIRT
 
     };
     

@@ -11,16 +11,19 @@
 #include <time.h>
 
 Tile::Tile(){
-    init(GameManager::TileType::WATER, GameManager::BiomeType::FRESHWATER);
+    init(GameManager::TileType::DIRT, GameManager::BiomeType::TEMPERATE_FOREST);
 }
 
-Tile::Tile(GameManager::TileType tileType){
+Tile::Tile(sf::Vector2f position){
+    this->position = position;
+    init(GameManager::TileType::DIRT, GameManager::BiomeType::TEMPERATE_FOREST);
+}
+
+Tile::Tile(sf::Vector2f position, GameManager::TileType tileType){
+    this->position = position;
     init(tileType, GameManager::BiomeType::ALPINE);
 }
 
-Tile::Tile(GameManager::TileType tileType, GameManager::BiomeType biomeType){
-    init(tileType, biomeType);
-}
 
 void Tile::init(GameManager::TileType tileType, GameManager::BiomeType biomeType){
     
@@ -28,7 +31,6 @@ void Tile::init(GameManager::TileType tileType, GameManager::BiomeType biomeType
     this->biomeType = biomeType;
     
     assignColors();
-    assignPosition();
     assignSize();
     assignTileProperties();
     
@@ -47,12 +49,6 @@ void Tile::assignColors(){
     currentColorValues = sf::Color(rand() % maxColorValues.r + minColorValues.r,rand() % maxColorValues.g + minColorValues.g,rand() % maxColorValues.b + minColorValues.b);
     
     
-    
-}
-
-void Tile::assignPosition(){
-    
-    position = sf::Vector2f(2,2);
     
 }
 

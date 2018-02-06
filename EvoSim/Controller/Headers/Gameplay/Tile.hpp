@@ -54,7 +54,6 @@ private:
     //Methods needed for tile creation
     void init(GameManager::TileType tileType, GameManager::BiomeType biomeType);
     void assignColors();
-    void assignPosition();
     void assignSize();
     void assignTileProperties();
     
