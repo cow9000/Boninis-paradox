@@ -38,6 +38,8 @@ namespace GameManager{
     const sf::Color buttonSelectedColor(0,224,127);
     const sf::Color buttonUnSelectedColor(255,255,255);
     
+    const sf::Vector2f chunkSize(16,16);
+    
     
 
 };

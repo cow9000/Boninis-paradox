@@ -24,6 +24,10 @@ Tile::Tile(sf::Vector2f position, GameManager::TileType tileType){
     init(tileType, GameManager::BiomeType::ALPINE);
 }
 
+Tile::~Tile(){
+    
+}
+
 
 void Tile::init(GameManager::TileType tileType, GameManager::BiomeType biomeType){
     
