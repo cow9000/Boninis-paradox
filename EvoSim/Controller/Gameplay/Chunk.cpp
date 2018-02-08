@@ -18,6 +18,16 @@ Chunk::~Chunk(){
     }
 }
 
+
+void Chunk::draw(sf::RenderTarget& target, sf::RenderStates states) const{
+    sf::VertexArray vArray(sf::Points);
+    for(int i = 0; i < tiles.size(); i++) {
+        vArray.append(sf::Vertex(tiles[i]->returnSize(), tiles[i]->returnCurrentColorValues()));
+    }
+    
+    target.draw(vArray);
+}
+
 void Chunk::updateChunk(){
     for(int i = 0; i < tiles.size(); i++){
         tiles[i]->updateTile(false, 0, 50);

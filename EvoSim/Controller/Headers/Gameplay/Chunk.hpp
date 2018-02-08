@@ -13,12 +13,14 @@
 #include "Tile.hpp"
 #include <vector>
 
-class Chunk{
+class Chunk : public sf::Drawable{
     
 public:
     Chunk(sf::Vector2f chunkPosition);
     ~Chunk();
     void updateChunk();
+    
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const;
     
 private:
     
