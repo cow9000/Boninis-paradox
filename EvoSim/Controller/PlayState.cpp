@@ -7,11 +7,12 @@
 //
 
 #include "Headers/PlayState.hpp"
+#include <iostream>
 
 PlayState::PlayState(StateManager* stateManager){
 	this->stateManager = stateManager;
 	this->changeWindowSize = false;
-    
+    this->fillChunks = true;
     
 }
 
@@ -29,16 +30,26 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     }
 }
 void PlayState::updateState(sf::RenderTarget &renderWindow){
-    if(chunks.empty()){
+    if(fillChunks){
         for(int x = 0; x < renderWindow.getSize().x/GameManager::chunkSize.x; x++){
-            for(int y = 0; y < renderWindow.getSize().y/GameManager::chunkSize.y; x++){
+            for(int y = 0; y < renderWindow.getSize().y/GameManager::chunkSize.y; y++){
                 chunks.push_back(new Chunk(sf::Vector2f(x,y)));
             }
         }
+        fillChunks = false;
     }
+
+
+
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
     
-	sf::Text gameText;
+    for(int i = 0; i < chunks.size(); i++){
+    	chunks.at(i)->updateChunk();
+    	std::cout << "Chunk drawn" << std::endl;
+    	renderWindow.draw(*chunks.at(i));
+
+    }
+
     
 }

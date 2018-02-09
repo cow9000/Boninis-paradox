@@ -30,7 +30,6 @@ Tile::~Tile(){
 
 
 void Tile::init(GameManager::TileType tileType, GameManager::BiomeType biomeType){
-    
     this->tileType = tileType;
     this->biomeType = biomeType;
     
@@ -42,7 +41,6 @@ void Tile::init(GameManager::TileType tileType, GameManager::BiomeType biomeType
 
 void Tile::assignColors(){
     
-    std::srand (std::time(NULL));
     
     
     //Colors will represent how "alive the ground is, if indeed that tile is alive, or how rocky it is"
@@ -58,13 +56,16 @@ void Tile::assignColors(){
     }else if(tileType == GameManager::TileType::ROCK){
         maxColorValues = sf::Color(222, 222, 222);
         minColorValues = sf::Color(119, 119, 119);
+    }else if(tileType == GameManager::TileType::WATER){
+    	maxColorValues = sf::Color(20, 125, 254);
+    	minColorValues = sf::Color(10, 105, 119);
     }
     
     if(tileType != GameManager::TileType::ROCK){
-        currentColorValues = sf::Color(rand() % maxColorValues.r + minColorValues.r,rand() % maxColorValues.g + minColorValues.g,rand() % maxColorValues.b + minColorValues.b);
+    currentColorValues = sf::Color(rand() % maxColorValues.r + minColorValues.r,rand() % maxColorValues.g + minColorValues.g,rand() % maxColorValues.b + minColorValues.b);
     }else{
-        double value = rand() % maxColorValues.r + minColorValues.r;
-        currentColorValues = sf::Color(value,value,value);
+    	double value = rand()%maxColorValues.r + minColorValues.r;
+    	currentColorValues = sf::Color(value,value,value);
     }
     
     
@@ -120,7 +121,7 @@ void Tile::die(){
 
 void Tile::updateTile(bool isRaining, double waterDistance, int temperature){
     
-    
+
     if(isRaining){
         currentWaterLevels ++;
     }
@@ -146,7 +147,27 @@ void Tile::updateTile(bool isRaining, double waterDistance, int temperature){
         double G = 2;
         double B = 2;
         currentColorValues = sf::Color(R,G,B);
+    }else{
+
+    	double r = currentColorValues.r + 1;
+    	if(r > maxColorValues.r) r = minColorValues.r;
+    	double g = currentColorValues.g + 1;
+    	if(g > maxColorValues.g) g = minColorValues.g;
+    	double b = currentColorValues.b + 1;
+    	if(b > maxColorValues.b) b = minColorValues.b;
+    	sf::Color newColor = sf::Color(r,g,b);
+    	currentColorValues = newColor;
+
+    	if(rand()%10 < 5){
+    		minColorValues.g -= 1;
+    		minColorValues.r -= 1;
+    		minColorValues.b -= 1;
+    		maxColorValues.g +=1;
+    		maxColorValues.r +=1;
+    		maxColorValues.b +=1;
+    	}
     }
+    //currentColorValues = sf::Color(rand() % maxColorValues.r + minColorValues.r,rand() % maxColorValues.g + minColorValues.g,rand() % maxColorValues.b + minColorValues.b);
     //////////////////////////////
 }
 

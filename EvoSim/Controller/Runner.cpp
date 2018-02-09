@@ -9,6 +9,7 @@
 #include "Headers/Controller.hpp"
 
 int main(){
+	std::srand (std::time(NULL));
     Controller app;
 
 }

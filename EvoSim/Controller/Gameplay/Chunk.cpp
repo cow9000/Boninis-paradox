@@ -10,6 +10,7 @@
 
 Chunk::Chunk(sf::Vector2f chunkPosition){
     this->chunkPosition = chunkPosition;
+    fillChunk();
 }
 
 Chunk::~Chunk(){
@@ -22,7 +23,12 @@ Chunk::~Chunk(){
 void Chunk::draw(sf::RenderTarget& target, sf::RenderStates states) const{
     sf::VertexArray vArray(sf::Points);
     for(int i = 0; i < tiles.size(); i++) {
-        vArray.append(sf::Vertex(tiles[i]->returnSize(), tiles[i]->returnCurrentColorValues()));
+    	sf::Vertex point;
+    	point.position = sf::Vector2f(tiles[i]->returnPosition().x+(chunkPosition.x*GameManager::chunkSize.x),
+    			tiles[i]->returnPosition().y+(chunkPosition.y*GameManager::chunkSize.y)
+    	);
+    	point.color = tiles[i]->returnCurrentColorValues();
+        vArray.append(point);
     }
     
     target.draw(vArray);
@@ -35,9 +41,9 @@ void Chunk::updateChunk(){
 }
 
 void Chunk::fillChunk(){
-    for(int r = chunkPosition.x * GameManager::chunkSize.x; r < GameManager::chunkSize.x; r++){
-        for(int c = chunkPosition.y * GameManager::chunkSize.y; c < GameManager::chunkSize.y; c++){
-            tiles.push_back(new Tile(sf::Vector2f(r,c),GameManager::ROCK));
+    for(int r = 0; r < GameManager::chunkSize.x; r++){
+        for(int c = 0; c < GameManager::chunkSize.y; c++){
+            tiles.push_back(new Tile(sf::Vector2f(r,c),GameManager::WATER));
         }
     }
 }

@@ -56,7 +56,7 @@ void MainMenuState::processState(sf::Event &event, sf::RenderTarget &renderWindo
     if(event.type == sf::Event::MouseButtonPressed){
         if(buttonSelected > 0){
         	if(buttonSelected == 1){
-
+        		stateManager->setCurrentState(States::implementedStates::PLAY);
         	}else if(buttonSelected == 2){
         		stateManager->setCurrentState(States::implementedStates::OPTIONS);
         	}else if(buttonSelected == 3){
