@@ -11,6 +11,8 @@
 PlayState::PlayState(StateManager* stateManager){
 	this->stateManager = stateManager;
 	this->changeWindowSize = false;
+    
+    
 }
 
 
@@ -27,7 +29,13 @@ void PlayState::processState(sf::Event &event, sf::RenderTarget &renderWindow){
     }
 }
 void PlayState::updateState(sf::RenderTarget &renderWindow){
-
+    if(chunks.empty()){
+        for(int x = 0; x < renderWindow.getSize().x/GameManager::chunkSize.x; x++){
+            for(int y = 0; y < renderWindow.getSize().y/GameManager::chunkSize.y; x++){
+                chunks.push_back(new Chunk(sf::Vector2f(x,y)));
+            }
+        }
+    }
 }
 void PlayState::renderState(sf::RenderTarget &renderWindow){
     

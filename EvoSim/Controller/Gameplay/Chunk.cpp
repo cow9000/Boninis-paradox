@@ -35,8 +35,8 @@ void Chunk::updateChunk(){
 }
 
 void Chunk::fillChunk(){
-    for(int r = 0; r < GameManager::chunkSize.x; r++){
-        for(int c = 0; c < GameManager::chunkSize.y; c++){
+    for(int r = chunkPosition.x * GameManager::chunkSize.x; r < GameManager::chunkSize.x; r++){
+        for(int c = chunkPosition.y * GameManager::chunkSize.y; c < GameManager::chunkSize.y; c++){
             tiles.push_back(new Tile(sf::Vector2f(r,c),GameManager::ROCK));
         }
     }

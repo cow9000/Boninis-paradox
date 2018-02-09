@@ -10,6 +10,7 @@
 #define PlayState_hpp
 
 #include "State.hpp"
+#include "Chunk.hpp"
 
 class PlayState : public State {
 public:
@@ -20,6 +21,7 @@ public:
     void renderState(sf::RenderTarget &renderWindow);
 private:
     bool changeWindowSize;
+    std::vector<Chunk*> chunks;
 };
 
 #endif /* PlayState_hpp */
